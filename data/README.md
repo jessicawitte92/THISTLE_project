@@ -92,7 +92,8 @@ For example, some of the images are noisy and blurry to the extent that I myself
 
 Other articles have complex layout features, such as tables, that caused the OCR engine to generate lots of errors:
 
-![example of complex layout 1](data/readme_imgs/layout-example.png)
+![example of complex layout 1](data/readme_imgs/layout-example.png) 
+
 ![example of complex layout 2](data/readme_imgslayout-example-2.png)
 
 Other challenging elements observed in the dataset include variations in typeface, faded column or table boundaries, footnotes, 
