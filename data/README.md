@@ -8,7 +8,7 @@ This document describes the data explored in the project, a subset of which is i
 
 *The Scotsman* was founded in Edinburgh in 1817 and is one of Scotland's oldest newspapers. It has been published as a daily newspaper since 1855 and has documented over two centuries of Scottish and British political, cultural, economic and social news.  
 
-![first edition of the scotsman](data/readme_imgs/scotsman_first.jpg) 
+![first edition of the scotsman](/imgs/Scotsman-first-edition.jpg) 
 
 
 At the time of writing, all historical issues of *The Scotsman* are available digitised through the *ProQuest Historical Newspapers* database and *The British Newspaper Archive*. The University of Edinburgh's library is currently subscribed to this database; other UK and international academic institutions may also provide access to their users. To check for access, [visit ProQuest](https://www.proquest.com/hnpscotsman1/), [the British Newspaper Archive](https://www.britishnewspaperarchive.co.uk/help-faq/how-can-i-access-the-scotsman-digital-archive-resources) or contact your library for more information.
