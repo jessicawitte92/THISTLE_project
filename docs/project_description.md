@@ -21,7 +21,7 @@ The simplest OCR corrective methods are lexicon-based, where words in a document
 8. Compare the results of the fine-tuned and 'base' LLM for OCR error correction.
 9. Review the findings.
 
-![diagram of the pipeline](/figures/pipeline.png)
+![diagram of the pipeline](/imgs/pipeline.png)
 
 # References
   
