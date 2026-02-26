@@ -86,7 +86,7 @@ This repository contains four directories, each of which includes its own README
 ## `/docs`
 A description and chronological summary of the project is available in the `/docs` directory, including:
 - Project description and research questions (`/project_description.md`)
-- Research process and methods (`/research_overview.md`)
+- Research process and methods (`/overview_of_methods.md`)
 - Experiments and results (`/results.md`)
 
 ## `/data`
