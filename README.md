@@ -106,3 +106,16 @@ All code required to run the THISTLE pipeline formatted as Jupyter notebooks:
 ## `/HPC`
 Instructions on how to adapt the Jupyter notebooks for working on a high-performance computing (HPC) cluster, with a README why (and when) you might want to do so and a description of the role of the University of Edinburgh's Eddie HPC cluster in this project.
 
+# License
+
+This repository is licensed under the Creative Commons Attribution–NonCommercial 4.0 International License (CC BY-NC 4.0).
+
+You are free to:
+- Share — copy and redistribute the material
+- Adapt — remix, transform, and build upon the material
+
+Under the following terms:
+- Attribution — you must give appropriate credit
+- NonCommercial — you may not use the material for commercial purposes
+
+See the LICENSE file for full terms.
