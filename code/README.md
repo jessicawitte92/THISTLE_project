@@ -23,6 +23,17 @@ Each notebook can be run independently, but they are designed to function as seq
 | `post_ocr_ft.ipynb` |  Deploys the fine-tuned LLM for post-OCR error correction |
 | `accuracy_and_results.ipynb` |  Compares OCR accuracy using CER and WER scores; evaluates the overall results |
 
+## Test case notes
+
+`post_ocr.ipynb` implements a prompt-based approach to post-OCR correction using locally-run LLMs. It is possible to run a similar test case using a chatbot (e.g. ChatGPT); however, there are several important differences:
+
+1. The notebook takes a `.csv` file as input and processes an entire dataset in a single code block. This makes it possible to assess a model's performance across a larger sample rather than manually copy-pasting a full dataset into a chatbot.
+2. Multiple models can be tested and compared by changing a single variable. Many LLMs, particularly open-access LLMs, are not available as chatbots at the time of writing.
+3. Working outside a chatbot interface allows you to adjust model parameters, perhaps most importantly the 'temperature' parameter which controls how 'creative' the model is in its outputs. For post-OCR error correction in historical texts, lower temperatures are likely to be more appropriate.
+4. This notebook is designed to answer the question: How well does [model] perform at OCR correction at baseline, without fine-tuning or further adjustments? The WER and CER scores produced here provide a quantitative answer to that question and are an essential step before deciding whether and how to fine-tune, but qualitative review is also very important...especially when diagnosing the types of (and potential reasons for) errors produced.
+
+
+
 ## How to use the notebooks
 
 ### Baseline workflow
