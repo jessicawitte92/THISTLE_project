@@ -23,7 +23,8 @@ Please note that THISTLE is provided as a research prototype / proof-of-concept.
 
 
 # How to use THISTLE
-THISTLE has been tested in both Google Colab and Anaconda. It can be run locally in Python IDEs such as PyCharm and Spyder or via Jupyter Notebooks. 
+For reproducibility and accessibility, especially for those with limited programming experience, the notebooks in this repo (`/code`) were written for working in Google Colab. Instructions on setting up the environment in Colab and importing data from Github and Google Drive are included at the top of each notebook. For those working locally, THISTLE has also been tested in Anaconda and can be run in Python IDEs such as PyCharm and Spyder or via Jupyter Notebooks. 
+
 ## Jupyter Notebooks via Google Colab
 ### Importing the repo to Colab
 First, log in to your Google account. If you don't have a Google account, you will need to make one in order to use Colab.
@@ -78,11 +79,19 @@ Regardless of how you choose to install it, please make sure you install Python 
 2. Select 'upload'.
 3. Navigate to where you have downloaded your file in your directory.  
 4. Select 'upload' again. 
-4. Double-click on the uploaded file. 
+4. Double-click on the uploaded file.
+
+## Notes on using THISTLE with other datasets
+Though THISTLE could be adapted in full or in part for use with another dataset, it has not been tested with alternative datasets. As the results (see `/docs/results.md') show, THISTLE does not at this stage correct OCR errors in *The Scotsman* dataset to a satisfactory standard for reliable text mining, NLP analysis, information retrieval or other downstream tasks.
+
+THISTLE evaluates OCR accuracy using the common word error rate (WER) and character error rate (CER) formulas, which compare an OCR engine's 'estimate' of a text to an accurate 'ground truth'. However, it is rare for archival datasets to contain ground truth, which almost always requires manual transcription of primary sources. If your dataset does not have 'ground truth,' you will likely need to transcribe a sample of texts in order to apply WER and CER formulas. Alternative NLP-based methods for benchmarking OCR accuracy do exist, and some were trialled in the development of THISTLE. However, I found they were insufficient for a variety of reasons (see `docs/results.md`) and would require singificant adaptation.
+
+In an earlier iteration of THISTLE, I compared the performance of the Transkribus AI Text Recognition model to Tesseract OCR, finding Tesseract's results much more accurate (see `docs/results.md`). This is not surprising, as Transkribus was designed specifically for handwritten text recognition (HTR) rather than OCR; although similar in aim, [HTR and OCR are not methodologically the same](https://www.transkribus.org/blog/en/insights/ocr-vs-htr). If you would like to try Transkribus, you can [sign up for an account](https://account.readcoop.eu/auth/realms/readcoop/protocol/openid-connect/registrations?client_id=transkribus-webui-app&response_type=code&scope=openid&redirect_uri=https%3A%2F%2Fapp.transkribus.org&state=ifyr) to receive 50 credits per month for free. You can also try Transkribus with [a drag-and-drop demo here.](https://www.transkribus.org/ai-text-recognition). 
 
 
 # Table of Contents
 This repository contains four directories, each of which includes its own README introducing the materials contained within. The directories are as follows:
+
 ## `/docs`
 A description and chronological summary of the project is available in the `/docs` directory, including:
 - Project description and research questions (`/project_description.md`)
@@ -95,16 +104,16 @@ A README describing *The Scotsman* dataset and copyright and licensing practices
 - `/imgs` contains .png files of images for the articles in the .csv file as 
 
 ## `/code`
-All code required to run the THISTLE pipeline formatted as Jupyter notebooks:
+All code required to run the THISTLE pipeline formatted as Jupyter notebooks (.ipynb):
 1. img_preprocessing.ipynb: enhances and prepares images for OCR  
-2. img_ocr.ipynb: extracts text from processed images using Tesseract OCR 
+2. img_ocr.ipynb: extracts text from processed images using DeepSeek OCR and Tesseract OCR  
 3. post_ocr_llm.ipynb: prompts LLMs to correct the OCR output 
-4. fine_tuning.ipynb: fine tunes LLMs for post-OCR error correction using an input dataset 
-5. post_ocr_ft.ipynb: deploys fine-tuned LLMs to correct OCR output 
-6. ocr_evaluation.ipynb: uses word error rate (WER) and character error rate (CER) to evaluate the accuracy of OCR output against 'ground truth' (in this case, a manual transcription)
+4. fine_tuning.ipynb: fine tunes LLMs for post-OCR error correction using an input dataset; deploys the fine-tuned model(s) to correct the OCR output
+
+Notebooks 2, 3 and 4 also include a benchmarking step using word error rate (WER) and character error rate (CER) to evaluate the accuracy of OCR output against 'ground truth', or accurate transcriptions of the primary sources.
 
 ## `/HPC`
-Instructions on how to adapt the Jupyter notebooks for working on a high-performance computing (HPC) cluster, with a README why (and when) you might want to do so and a description of the role of the University of Edinburgh's Eddie HPC cluster in this project.
+Instructions on how to adapt the notebooks in `/code` for working on a high-performance computing (HPC) cluster, with a README discussing why (and when) you might want to do so. For this project, I used the (University of Edinburgh's Eddie compute cluster)[https://digitalresearchservices.ed.ac.uk/resources/eddie]. 
 
 # License
 
