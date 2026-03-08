@@ -57,8 +57,4 @@ These results indicate weak performance for zero-shot prompting in correcting hi
 
 A central methodological insight from this test case was that task refusal and unsolicited text generation could impact the effectiveness of the OCR correction pipeline. In the next stage of development, I focused not only on improving error rates but also on constraining model behaviour.
 
-### Fine tuning
 
-# Summary of findings 
-# Analysis
-# Future work
