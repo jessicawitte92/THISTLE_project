@@ -105,12 +105,11 @@ A README describing *The Scotsman* dataset and copyright and licensing practices
 
 ## `/code`
 All code required to run the THISTLE pipeline formatted as Jupyter notebooks (.ipynb):
-1. img_preprocessing.ipynb: enhances and prepares images for OCR  
-2. img_ocr.ipynb: extracts text from processed images using DeepSeek OCR and Tesseract OCR  
-3. post_ocr_llm.ipynb: prompts LLMs to correct the OCR output 
-4. fine_tuning.ipynb: fine tunes LLMs for post-OCR error correction using an input dataset; deploys the fine-tuned model(s) to correct the OCR output
+1. img_preprocessing.ipynb: enhances and prepares images for OCR; extracts text from processed images using Tesseract OCR  
+2. post_ocr_llm.ipynb: prompts LLMs to correct the OCR output; a 'test case' for prompt engineering, establishing baseline performance and/or determining a need for fine tuning
+3. fine_tuning.ipynb: fine tunes LLMs for post-OCR error correction using an input dataset; deploys the fine-tuned model(s) to correct the OCR output
+4. accuracy_and_results.ipynb: compares OCR accuracy using CER and WER scores; evaluates the overall results
 
-Notebooks 2, 3 and 4 also include a benchmarking step using word error rate (WER) and character error rate (CER) to evaluate the accuracy of OCR output against 'ground truth', or accurate transcriptions of the primary sources.
 
 ## `/HPC`
 Instructions on how to adapt the notebooks in `/code` for working on a high-performance computing (HPC) cluster, with a README discussing why (and when) you might want to do so. For this project, I used the (University of Edinburgh's Eddie compute cluster)[https://digitalresearchservices.ed.ac.uk/resources/eddie]. 
