@@ -8,7 +8,6 @@ This directory contains the Jupyter notebooks that implement the THISTLE OCR-pro
 - Deployment of fine-tuned model
 - Quantitative evaluation
   
-Each notebook can be run independently, but they are designed to function as sequential stages in a reproducible workflow.
 
 ---
 
@@ -16,11 +15,9 @@ Each notebook can be run independently, but they are designed to function as seq
 
 | File name |  Description |
 |---|---|
-| `img_preprocessing.ipynb` |  Enhances scanned newspaper images and visualises the results compared to originals |
-| `img_ocr.ipynb` |  Uses the DeepSeek vision model via Ollama and the Tesseract OCR engine to extract text from images |
+| `img_preprocessing.ipynb` |  Enhances scanned newspaper images and visualises the results compared to originals; extracts text with Tesseract OCR |
 | `post_ocr.ipynb` |  Test case using a locally-run LLM via Ollama to correct OCR errors |
-| `fine-tuning.ipynb` |  Fine-tunes an LLM downloaded from HuggingFace using a LoRA prompt-tuning approach |
-| `post_ocr_ft.ipynb` |  Deploys the fine-tuned LLM for post-OCR error correction |
+| `fine-tuning.ipynb` |  Fine-tunes an LLM downloaded from HuggingFace using a LoRA prompt-tuning approach; deploys the fine-tuned LLM for post-OCR error correction |
 | `accuracy_and_results.ipynb` |  Compares OCR accuracy using CER and WER scores; evaluates the overall results |
 
 ## Test case notes
@@ -37,10 +34,10 @@ Each notebook can be run independently, but they are designed to function as seq
 ## How to use the notebooks
 
 ### Baseline workflow
-1. Run `img_preprocessing.ipynb` to enhance scanned images.
-2. Run `img_ocr.ipynb` to extract OCR text.
-3. Run `post_ocr.ipynb` to evaluate prompt-based correction using local LLMs.
-4. Run `accuracy_and_results.ipynb` to compare OCR quality.
+1. Run `img_preprocessing.ipynb` to enhance scanned images and extract OCR text
+2. Run `post_ocr.ipynb` to evaluate prompt-based correction using local LLMs.
+3. 3. Run `fine-tuning.ipynb` to explore the performance of a fine-tuned LLM.
+4. Run `accuracy_and_results.ipynb` to compare OCR quality across results.
 
 ### Fine-tuning workflow (optional)
 1. Run `post_ocr.ipynb` to establish baseline performance.
