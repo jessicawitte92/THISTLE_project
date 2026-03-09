@@ -106,6 +106,11 @@ Ollama and HuggingFace both offer a large selection of models. If you'd like to 
 
 Some HuggingFace models are gated, meaning that you must first make an account and request access before you can use them. You will then need to authenticate your identity with a passcode in the notebook. Instructions for this process are included in the fine tuning notebook.
 
+
+### About LoRA fine-tuning
+
+Full fine-tuning of LLMs requires updating billions of parameters and is computationally expensive. LoRA instead trains a small number of additional parameters (the 'low-rank adapters') while keeping the original model weights frozen. This dramatically reduces GPU memory requirements and training time while still producing meaningful improvements on domain-specific tasks. The LoRA adapters trained in `fine-tuning.ipynb` are saved separately from the base model and can be merged or loaded alongside it at inference time. 
+
 ---
 ## Dataset
 The dataset used for training and evaluatino consists of 100 manually transcribed articles from early nineteenth-century issues of The Scotsman (1817–1825). You can find the dataset at `data/ground_truth.csv`. 
