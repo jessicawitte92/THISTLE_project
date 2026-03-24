@@ -37,9 +37,11 @@ If you are working with a large dataset or LLM, running your code on a high perf
 
 HPCs can be slightly different but the overall process will be: convert the Jupyter notebook to a plain Python script, set up your Python environment on the cluster, and submit the script to the queueing system as a job.
 
+Note: These instructions are provided as a general guide; exact commands and module names will vary depending on the HPC system.
+
 # Setting up a Python environment on an HPC cluster 
 ## Step 1: Convert the notebook to a Python script
-Jupyter notebooks (.ipynb files) cannot be submitted directly to SLURM. You can convert them using the following command (run locally or on the cluster login node):
+Jupyter notebooks (.ipynb files) typically need to be converted to Python (.py) files before they can be submitted as jobs. You can convert them using the following command, either locally or on the cluster login node:
 ```
 jupyter nbconvert --to script ocr_preprocessing.ipynb
 ```
