@@ -55,6 +55,6 @@ Across models, zero-shot correction reduced some character-level errors, but ove
 
 These results indicate weak performance for zero-shot prompting in correcting highly degraded nineteenth-century OCR. At the time this evaluation was conducted, these models were some of the highest benchmarked in text-to-text generation open-access. However, I did not test closed-source models, and it is possible that may perform better in zero-shot OCR error correction; alternatively, models fine-tuned on more closely aligned historical or OCR-specific tasks would yield stronger zero-shot performance could have better results.
 
-A central methodological insight from this test case was that task refusal and unsolicited text generation could impact the effectiveness of the OCR correction pipeline. In the next stage of development, I focused not only on improving error rates but also on constraining model behaviour.
+A central methodological insight from this test case was that task refusal and unsolicited text generation could impact the effectiveness of the OCR correction pipeline. In the next stage of development, I focused on both error rates and model behaviour.
 
 
