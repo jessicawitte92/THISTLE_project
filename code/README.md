@@ -33,6 +33,10 @@ This directory contains the Jupyter notebooks that implement the THISTLE OCR-pro
 
 ## How to use the notebooks
 
+**NOTE:** all of the notebooks load files from (and save files to) a project folder where, it is assumed, you have cloned this repo. Before you get started, be sure to confirm the path to the repo (which may be on your local machine, in Google Drive, or on your HPC cluster) and that all paths in the notebooks are correct before you get started. You may need to create a project folder if one does not already exist; you will likely also need to manually update the paths or you will encounter an error. 
+
+You can read more about paths and a computer's file structure [here](https://www.sdmfoundation.org/2023/11/22/understanding-file-pathing/) or [here](https://www.codecademy.com/resources/docs/general/file-paths).
+
 ### Baseline workflow
 1. Run `img_preprocessing.ipynb` to enhance scanned images and extract OCR text
 2. Run `post_ocr.ipynb` to evaluate prompt-based correction using local LLMs.
@@ -110,6 +114,16 @@ Some HuggingFace models are gated, meaning that you must first make an account a
 ### About LoRA fine-tuning
 
 Full fine-tuning of LLMs requires updating billions of parameters and is computationally expensive. LoRA instead trains a small number of additional parameters (the 'low-rank adapters') while keeping the original model weights frozen. This dramatically reduces GPU memory requirements and training time while still producing meaningful improvements on domain-specific tasks. The LoRA adapters trained in `fine-tuning.ipynb` are saved separately from the base model and can be merged or loaded alongside it at inference time. 
+
+Here are some resources with more details about this approach: 
+
+Wang et al. (2023). 'LoRA ensembles for large language model fine-tuning' https://doi.org/10.48550/arXiv.2310.00035 
+
+Zhao et al. (2024). 'LoRA Land: 310 Fine-tuned LLMs that Rival GPT-4, A Technical Report' https://arxiv.org/abs/2405.00732 
+
+Gao et al. (2024). 'FashionGPT: LLM instruction fine-tuning with multiple LoRA-adapter fusion' https://doi.org/10.1016/j.knosys.2024.112043 
+
+IBM, 'What is LoRA (low-rank adaption)?' https://www.ibm.com/think/topics/lora
 
 ---
 ## Dataset
